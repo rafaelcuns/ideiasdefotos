@@ -1,7 +1,12 @@
 let img = document.querySelector("img")
+const QfotosNoBanco = 5
+let numAtual = 0
 
 document.querySelector("button").addEventListener('click', () => {
-    QfotosNoBanco = 5
-    img.src = "ideias/ideia" + Math.floor(Math.random() * QfotosNoBanco) + ".jpg"
-    console.log(img.src)
+    numAntigo = numAtual
+    do {
+        numAtual = Math.floor(Math.random() * QfotosNoBanco)
+    } while (numAtual == numAntigo)
+    
+    img.src = "ideias/ideia" + numAtual + ".jpg"
 })
